@@ -12,7 +12,9 @@ namespace Test
     {
         static void Main(string[] args)
         {
-            
+            var test = Company.Bankrot();           //Вызов метода
+            test.data = "";                         //Параметры поиска
+            Console.WriteLine(test.GetJSON());      //Получить JSON
         }
     }
 }

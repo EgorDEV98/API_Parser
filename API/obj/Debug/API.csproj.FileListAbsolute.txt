@@ -1,0 +1,6 @@
+C:\Users\egors\source\repos\Test\API\bin\Debug\API.dll
+C:\Users\egors\source\repos\Test\API\bin\Debug\API.pdb
+C:\Users\egors\source\repos\Test\API\obj\Debug\API.csproj.AssemblyReference.cache
+C:\Users\egors\source\repos\Test\API\obj\Debug\API.csproj.CoreCompileInputs.cache
+C:\Users\egors\source\repos\Test\API\obj\Debug\API.dll
+C:\Users\egors\source\repos\Test\API\obj\Debug\API.pdb
