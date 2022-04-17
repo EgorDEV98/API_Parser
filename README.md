@@ -3,6 +3,6 @@
 <h3>Bankrot - https://bankrot.fedresurs.ru/ (17.04.2022)</h3>
 
 <h1>Пример использования:</h1>
-var test = Company.Bankrot(Status.Все, RegionId.Москва);
-test.data = "Имя какой то компании";
-test.GetJSON();      //Получить JSON
+<div>var test = Company.Bankrot(Status.Все, RegionId.Москва);</div>
+<div>test.data = "Имя какой то компании";</div>
+<div>test.GetJSON();      //Получить JSON</div>
