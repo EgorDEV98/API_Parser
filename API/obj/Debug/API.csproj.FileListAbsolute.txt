@@ -4,3 +4,6 @@ C:\Users\egors\source\repos\Test\API\obj\Debug\API.csproj.AssemblyReference.cach
 C:\Users\egors\source\repos\Test\API\obj\Debug\API.csproj.CoreCompileInputs.cache
 C:\Users\egors\source\repos\Test\API\obj\Debug\API.dll
 C:\Users\egors\source\repos\Test\API\obj\Debug\API.pdb
+C:\Users\egors\source\repos\Test\API\bin\Debug\Newtonsoft.Json.dll
+C:\Users\egors\source\repos\Test\API\bin\Debug\Newtonsoft.Json.xml
+C:\Users\egors\source\repos\Test\API\obj\Debug\API.csproj.CopyComplete

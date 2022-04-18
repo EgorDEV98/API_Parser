@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.Specialized;
+﻿using System.Collections.Specialized;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using System.Web;
+
 
 namespace API.Service
 {
@@ -105,7 +102,7 @@ namespace API.Service
         Ямало_Ненецкий_автономный_округ = 104,
         Ярославская_область = 78
     }
-
+    
     /// <summary>
     /// Статус дела
     /// </summary>
@@ -115,10 +112,10 @@ namespace API.Service
         В_работе = 1,
         Завершено = 2
     }
+    
 
 
-
-    public partial class Bankrot
+    public class Bankrot
     {
         private WebClient wk;
         private const string baseUrl = "https://bankrot.fedresurs.ru/backend/cmpbankrupts";
@@ -150,13 +147,12 @@ namespace API.Service
         {
             var collection = new NameValueCollection();
             if (!string.IsNullOrEmpty(data)) collection.Add("searchString", data);
-            collection.Add("isActiveLegalCase", enumStatusToString(status));
-            if (regionId != 0) collection.Add("regionId", enumRegionToString(regionId));
+            collection.Add("isActiveLegalCase", Utils.Utils.enumStatusToString(status));
+            if (regionId != 0) collection.Add("regionId", Utils.Utils.enumRegionToString(regionId));
             collection.Add("limit", "15");
             collection.Add("offset", "0");
 
-            string queryString = toQueryString(collection);
-
+            string queryString = Utils.Utils.toQueryString(collection);
 
             wk = new WebClient();
             wk.Headers.Add(HttpRequestHeader.UserAgent, "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36");
@@ -168,34 +164,6 @@ namespace API.Service
             var textResponse = reader.ReadToEnd();
 
             return textResponse;
-        }
-
-        private string toQueryString(NameValueCollection nvc)
-        {
-            var array = (
-                from key in nvc.AllKeys
-                from value in nvc.GetValues(key)
-                select string.Format(
-            "{0}={1}",
-            HttpUtility.UrlEncode(key),
-            HttpUtility.UrlEncode(value))
-                ).ToArray();
-            return "?" + string.Join("&", array);
-        }
-        private string enumStatusToString(Status status)
-        {
-            switch ((int)status)
-            {
-                case 1: return "true";
-                case 2: return "false";
-                default: return "null";
-            }
-        }
-        private string enumRegionToString(RegionId regionId)
-        {
-            if ((int)regionId == 0)
-                return "";
-            return "&regionId=" + (int)regionId;
-        }
+        }       
     }
 }

@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using API.Service;
+﻿using API.Service;
+using API.Service.Person;
 
 namespace API
 {
@@ -12,7 +8,31 @@ namespace API
     /// </summary>
     public class Person
     {
+        /*=======================================================================================================================*/
+        
+        /// <summary>
+        /// Предоставляет набор методов класса INN
+        /// </summary>
+        /// <returns>INN</returns>
+        public static INN INN() { return new INN(); }
 
+        /// <summary>
+        /// Предоставляет набор методов класса INN
+        /// </summary>
+        /// <param name="fullName">ФИО полностью. Прим. Иванов Иван Иванович</param>
+        /// <returns></returns>
+        public static INN INN(string fullName) { return new INN(fullName); }
+
+        /// <summary>
+        /// Предоставляет набор методов класса INN
+        /// </summary>
+        /// <param name="firstName">Имя</param>
+        /// <param name="lastName">Фамилия</param>
+        /// <param name="secondName">Отчество</param>
+        /// <returns></returns>
+        public static INN INN(string firstName, string lastName, string secondName) { return new INN(firstName, lastName, secondName); }
+
+        /*=======================================================================================================================*/
     }
 
     /// <summary>
@@ -53,6 +73,7 @@ namespace API
         public static Bankrot Bankrot(string data, Status status, RegionId region) { return new Bankrot(data, status, region); }
 
         /*=======================================================================================================================*/
+
 
 
         
